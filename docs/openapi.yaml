@@ -1,0 +1,41 @@
+openapi: 3.0.0
+info:
+  title: allOf optional property crash
+  version: 1.0.0
+
+paths:
+  /search:
+    post:
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SearchRequest'
+      responses:
+        '200':
+          description: OK
+
+components:
+  schemas:
+    BasePagination:
+      type: object
+      properties:
+        page:
+          type: integer
+          default: 1
+          minimum: 1
+        pageSize:
+          type: integer
+          default: 50
+          minimum: 1
+          maximum: 100
+
+    SearchRequest:
+      allOf:
+        - $ref: '#/components/schemas/BasePagination'
+        - type: object
+          properties:
+            query:
+              type: string
+              description: A search term

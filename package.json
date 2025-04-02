@@ -1,0 +1,21 @@
+{
+  "name": "openapi-ts-repro",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "generate": "openapi-ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@hey-api/client-axios": "^0.7.0",
+    "@hey-api/openapi-ts": "^0.66.0",
+    "@tanstack/react-query": "^5.71.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.3"
+  }
+}
